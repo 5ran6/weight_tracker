@@ -1,6 +1,8 @@
 import 'package:weight_tracker/imports/imports.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -12,9 +14,6 @@ class MyApp extends StatelessWidget {
         designSize: Size(360, 690),
         builder: () => MultiProvider(
           providers: [
-            ChangeNotifierProvider(
-              create: (context) => AuthProvider(),
-            ),
             ChangeNotifierProvider(
               create: (context) => DashboardProvider(),
             ),

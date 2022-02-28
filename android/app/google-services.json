@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "648448998768",
+    "project_id": "weight-tracker-1b103",
+    "storage_bucket": "weight-tracker-1b103.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648448998768:android:e17a2927bf8c95f2aaa3b5",
+        "android_client_info": {
+          "package_name": "co.ourpass.interview.weight_tracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "648448998768-5pm0ot4o3gjesjcnbkm90fc9a1oejf8t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.ourpass.interview.weight_tracker",
+            "certificate_hash": "46dcfe9c35a68d0b35f8ea6a87223d3acc9261c6"
+          }
+        },
+        {
+          "client_id": "648448998768-65ee1sb90ai1dgbspis8nv0m304v9kgo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWmMTvPPOtXG4AMcIRNpJrjtezYyDFAjU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "648448998768-65ee1sb90ai1dgbspis8nv0m304v9kgo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
