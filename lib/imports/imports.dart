@@ -11,7 +11,6 @@ export 'package:flutter_spinkit/flutter_spinkit.dart';
 export 'package:page_transition/page_transition.dart';
 export 'package:flutter_screenutil/flutter_screenutil.dart';
 export 'package:shared_preferences/shared_preferences.dart';
-export 'package:device_preview/device_preview.dart' hide DeviceOrientation;
 
 //------------------------VIEWS------------------------------------------------
 export 'package:weight_tracker/views/auth.dart';

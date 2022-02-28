@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
                 child: widget!,
               );
             },
-            home: Dashboard(),
+            home: SplashScreen(),
           ),
         ));
   }

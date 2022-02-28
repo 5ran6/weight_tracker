@@ -77,29 +77,6 @@ class _SplashScreenState extends State<SplashScreen>
                       ),
                     ),
                   ),
-                  // Container(
-                  //   padding: EdgeInsets.all(10 * 4.0),
-                  //   color: Colors.transparent,
-                  //   child: Column(
-                  //     mainAxisAlignment: MainAxisAlignment.start,
-                  //     crossAxisAlignment: CrossAxisAlignment.center,
-                  //     children: [
-                  //       SpinKitRing(
-                  //         color: AppTheme.kWhiteColor,
-                  //         size: 30.0,
-                  //         lineWidth: 1.2,
-                  //       ),
-                  //       SizedBox(
-                  //         height: ScreenUtil().setHeight(20),
-                  //       ),
-                  //
-                  //       Text(
-                  //         'Welcome to Cura Health',
-                  //         style: AppTheme.kBodyTextStyle,
-                  //       ),
-                  //     ],
-                  //   ),
-                  // ),
                 ],
               ),
             ),
