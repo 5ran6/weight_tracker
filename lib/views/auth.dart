@@ -7,6 +7,7 @@ class Auth extends StatefulWidget {
 
 class _AuthState extends State<Auth> {
   final Api _api = Api();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,37 +26,35 @@ class _AuthState extends State<Auth> {
                           fontSize: 30,
                           fontFamily: 'Roboto')),
                 ),
-
                 Padding(
                     padding: EdgeInsets.all(10.0),
                     child: SignInButton(
                       Buttons.Google,
                       text: "Sign up with Google",
-                      onPressed: ()async{
-                       await _api.signInAnon().then((user) async{
-                         if(user == null){
-                           print('error signing in');
-                         } else {
-                           await SharedPreferences.getInstance().then((prefs) async {
-                             prefs.setBool('loggedIn', true);
-                             print("user == "+json.encode(user.toJson()));
-                             prefs.setString('user', json.encode(user.toJson()));
-                             print ("shared pref data saved");
-                           });
-                           print('signed in');
-                           print(user);
-                           Navigator.of(context).push(
-                             MaterialPageRoute(
-                               builder: (_) => Dashboard(user.toJson()),
-                             ),
-                           );
-
-                         }
-                       });
+                      onPressed: () async {
+                        await _api.signInAnon().then((user) async {
+                          if (user == null) {
+                            print('error signing in');
+                          } else {
+                            await SharedPreferences.getInstance()
+                                .then((prefs) async {
+                              prefs.setBool('loggedIn', true);
+                              print("user == " + json.encode(user.toJson()));
+                              prefs.setString(
+                                  'user', json.encode(user.toJson()));
+                              print("shared pref data saved");
+                            });
+                            print('signed in');
+                            print(user);
+                            Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                builder: (_) => Dashboard(user.toJson()),
+                              ),
+                            );
+                          }
+                        });
                       },
                     )),
-
-
               ]),
         ));
   }

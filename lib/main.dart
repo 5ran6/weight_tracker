@@ -12,10 +12,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
         designSize: Size(360, 690),
-        builder: () => MultiProvider(
+        builder: () => MultiBlocProvider(
           providers: [
-            ChangeNotifierProvider(
-              create: (context) => DashboardProvider(),
+            BlocProvider<HomeBloc>(
+              create: (context) => HomeBloc(),
             ),
           ],
           child: MaterialApp(
