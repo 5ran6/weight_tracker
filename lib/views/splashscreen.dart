@@ -9,7 +9,6 @@ class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   AnimationController? _controller;
   Animation<double>? _animation;
-  String? id;
   late SharedPreferences? prefs;
 
   @override
@@ -98,17 +97,19 @@ class _SplashScreenState extends State<SplashScreen>
 
   checkIfLoggedIn() async {
     var isLoggedIn = prefs!.getBool('loggedIn');
+    print ("isLoggedIn: " + isLoggedIn.toString());
     if (isLoggedIn != null && isLoggedIn) {
       prefs!.setBool('loggedIn', true);
-      id = prefs!.getString('id');
+     String? jsonUser = prefs!.getString('user');
+     Map<String,dynamic> user = json.decode(jsonUser!);
       //goto Dashboard
-      if (id != null) {
+      if (user != null) {
         Navigator.pushReplacement(
             context,
             PageTransition(
                 duration: Duration(milliseconds: 600),
                 type: PageTransitionType.fade,
-                child: Dashboard(id)));
+                child: Dashboard(user)));
       } else {
         Navigator.pushReplacement(
             context,

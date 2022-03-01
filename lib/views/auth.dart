@@ -37,11 +37,17 @@ class _AuthState extends State<Auth> {
                              if(user == null){
                                print('error signing in');
                              } else {
+                               await SharedPreferences.getInstance().then((prefs) async {
+                                 prefs.setBool('loggedIn', true);
+                                 print("user == "+json.encode(user.toJson()));
+                                 prefs.setString('user', json.encode(user.toJson()));
+                                 print ("shared pref data saved");
+                               });
                                print('signed in');
-                               print(user.uid);
+                               print(user);
                                Navigator.of(context).push(
                                  MaterialPageRoute(
-                                   builder: (_) => Dashboard(user),
+                                   builder: (_) => Dashboard(user.toJson()),
                                  ),
                                );
 
