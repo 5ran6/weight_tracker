@@ -5,6 +5,7 @@ import 'package:weight_tracker/imports/imports.dart';
   use "Theme.of(context).primaryColor"*/
 class AppTheme {
   AppTheme._();
+
   final primaryColor = Color(0XFF317CFB);
   final whiteColor = Color(0XFFFFFFFF);
   static final greyColor1 = Color(0XFF5B5B5B);
@@ -53,6 +54,20 @@ class AppTheme {
     end: Alignment.bottomLeft,
     colors: [Colors.white.withOpacity(0.95), Colors.grey],
   );
+
+  static TextStyle whiteBold = TextStyle(
+      color: kPrimaryColor, fontWeight: FontWeight.bold, fontFamily: 'Ubuntu');
+  static TextStyle whiteNormal = TextStyle(
+      color: kWhiteColor, fontWeight: FontWeight.normal, fontFamily: 'Ubuntu');
+  static TextStyle whiteBoldWithSpacing = TextStyle(
+      color: kWhiteColor,
+      fontWeight: FontWeight.bold,
+      letterSpacing: 2.0,
+      fontFamily: 'Ubuntu');
+  static TextStyle blackBold = TextStyle(
+      color: kBlackColor, fontWeight: FontWeight.bold, fontFamily: 'Ubuntu');
+  static TextStyle blackNormal = TextStyle(
+      color: kBlackColor, fontWeight: FontWeight.normal, fontFamily: 'Ubuntu');
 
   static ThemeData lightTheme = ThemeData(
     fontFamily: 'Ubuntu',
