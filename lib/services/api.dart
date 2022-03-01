@@ -29,13 +29,15 @@ class Api {
 // logout
   Future signOut() async {
     try {
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      await prefs.clear().then((value) async {
-        return await _auth.signOut();
-      });
+     await _auth.signOut();
+     await SharedPreferences.getInstance().then((prefs) async{
+       await prefs.clear();
+     });
+     return "true";
+
     } catch (error) {
-      print(error.toString());
-      return null;
+      print("got and error: " + error.toString());
+      return "error";
     }
   }
 

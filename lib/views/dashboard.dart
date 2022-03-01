@@ -10,13 +10,51 @@ class Dashboard extends StatefulWidget {
   @override
   _DashboardState createState() => _DashboardState();
 }
-//{"uid":"uWuT5sH0d1aVO4eZA2s45Q9WJGj2","displayName":null,"email":null,"emailVerified":false,"isAnonymous":true,"phoneNumber":null,"photoURL":null,"refreshToken":""}
+
+
 class _DashboardState extends State<Dashboard> {
-  @override
+final  Api _api = Api();
+
+
+@override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Container(
-      child: Text(widget.user["uid"]),
-    ));
+    return Scaffold(
+        appBar: AppBar(
+          title: Center(child: Text("Weight Tracker")),
+          automaticallyImplyLeading: false,
+          actions: [
+            IconButton(
+              icon: Icon(Icons.logout),
+              onPressed: () async {
+              await _api.signOut().then((value) {
+                print(value.toString());
+                if (value != "error"){
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
+                      builder: (_) => Auth(),
+                    ),
+                  );
+                }else{
+                  //something went wrong
+                  CoolAlert.show(
+                    context: context,
+                    type: CoolAlertType.error,
+                    text: "Sign Out unsuccessful! Try again later.",
+                  );
+                }
+              });
+              },
+            ),
+          ],
+          leading: IconButton(
+            icon: Icon(Icons.person),
+            onPressed: () {
+              /** Do something */
+            },
+          ),
+        ),
+        body: Container(
+          child: Text(widget.user["uid"]),
+        ));
   }
 }
